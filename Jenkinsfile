@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     tools {
-        jdk 'JAVA_HOME', maven 'M2_HOME'
+        jdk 'JAVA_HOME' // Assurez-vous que JAVA_HOME est configuré dans Jenkins
+        maven 'M2_HOME' // Assurez-vous que M2_HOME est configuré dans Jenkins
     }
 
     stages {
@@ -13,7 +14,7 @@ pipeline {
             }
         }
 
-        stage ('Compile Stage') {
+        stage('Compile Stage') {
             steps {
                 sh 'mvn clean compile'
             }
